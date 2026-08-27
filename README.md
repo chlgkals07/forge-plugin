@@ -4,14 +4,16 @@ Forge is a personal Claude Code plugin for one-plan-at-a-time, evidence-backed a
 
 ## Install
 
-Persistent personal install (loads automatically every session, no `--plugin-dir` flag needed):
+Same two commands as any other personal plugin — no cloning required:
 
 ```bash
-mkdir -p ~/.claude/skills
-ln -s "$(pwd)/forge-plugin" ~/.claude/skills/forge
+claude plugin marketplace add chlgkals07/forge-plugin
+claude plugin install forge@forge
 ```
 
-Restart Claude Code (or run `/reload-plugins`); it then loads as `forge@skills-dir`, the same way any other personal skill/plugin loads. Alternatively, from this repository, validate and run it for one session without installing:
+This registers the repo as a marketplace (`.claude-plugin/marketplace.json` at the repo root) and installs the `forge` plugin from it at user scope, loading automatically every session from then on. To update later: `claude plugin update forge@forge` (restart to apply).
+
+For local iteration on this repo instead, validate and run it for one session without installing:
 
 ```bash
 claude plugin validate ./forge-plugin --strict
