@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(.forge/**)",
+      "Write(.forge/**)",
+      "Read(.forge/**)",
+      "Bash(bash forge-plugin/scripts/*.sh:*)",
+      "Bash(${CLAUDE_PLUGIN_ROOT}/scripts/*.sh:*)"
+    ]
+  }
+}

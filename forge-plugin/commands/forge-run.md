@@ -8,7 +8,7 @@ Start executing the plan from `.forge/PLAN.md`. If no plan exists yet, tell the 
 1. Run `${CLAUDE_PLUGIN_ROOT}/scripts/forge-guard.sh approve --project "$CLAUDE_PROJECT_DIR"` to validate the plan and record the run state. Never bypass this gate.
 2. If `$ARGUMENTS` contains an additional request, incorporate it into the plan scope before starting — add a task or note, update `.forge/PLAN.md` and `.forge/WORKLOG.md`.
 3. Switch to auto mode. Work through tasks in plan order continuously. Keep `.forge/TASKS.md` and `.forge/WORKLOG.md` current with commands run, evidence, decisions, failures, and pauses.
-4. Claude owns integration and judgment. Use `${CLAUDE_PLUGIN_ROOT}/scripts/codex-dispatch.sh` only for bounded packets. Read-only `investigate`/`review` use `--sandbox read-only`; `implement` always uses a separate Git worktree.
+4. Claude owns integration and judgment. Route each task by its `.forge/TASKS.md` owner: `Codex-*` tasks use `${CLAUDE_PLUGIN_ROOT}/scripts/codex-dispatch.sh` only for bounded packets (read-only `investigate`/`review` use `--sandbox read-only`; `implement` always uses a separate Git worktree); `Claude`-owned tasks use the `superpowers:subagent-driven-development` skill (fresh implementer subagent + task reviewer + fix loop per task).
 5. **Do not ask for permission during execution** unless the action is:
    - `sudo` or system/kernel/driver/package-manager change
    - Credential, token, SSH key, or auth file access
