@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "forge",
+  "displayName": "Forge",
+  "version": "0.1.0",
+  "description": "Claude-led, Codex-assisted autonomous software workflow with explicit approval and safety gates.",
+  "license": "MIT",
+  "author": {"name": "Forge personal plugin"},
+  "keywords": ["planning", "codex", "safety", "worktree", "verification"]
+}
